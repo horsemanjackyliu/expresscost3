@@ -1,0 +1,19 @@
+---
+applications:
+
+- name: expresscost3
+  memory: 1500M
+  timeout: 300
+  random-route: true
+  path: application/target/expresscost3-application.jar
+  buildpacks:
+    - sap_java_buildpack
+  env:
+    TARGET_RUNTIME: main
+    SPRING_PROFILES_ACTIVE: 'cloud'
+    JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
+#  services:
+#  - my-application-logs
+#  - my-xsuaa
+#  - my-destination
+#  - my-connectivity
